@@ -1,6 +1,8 @@
-# Portal 2 32 player mod plugin
+# Portal 2 32 player mod (WINDOWS EDITION)
 
-This plugin is specifically meant as an addition to @kyleraykbs 32 player mod for Portal 2. It currently has very limited functionality but I have plans to expand soon.
+This specific version of the plugin is meant for windows. Therefore (since i'm a primarily linux user) it will sometimes be out of sync or not as up to date as the linux version. I am creating a separate repository in case if the featureset will divolge over time for both of the supported OS's.
+
+This plugin is specifically meant as an addition to [@kyleraykbs](https://github.com/kyleraykbs) [32 player mod for Portal 2](https://github.com/kyleraykbs/Portal2-32PlayerMod). It currently has very limited functionality but I have plans to expand soon.
 
 Current features:
 - concommand: get_username, returns username of player at index (1-32 i think?)  
