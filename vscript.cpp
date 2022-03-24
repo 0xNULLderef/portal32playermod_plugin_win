@@ -1,8 +1,8 @@
-#include <vscript.hpp>
+#include "vscript.hpp"
 
-#include <console.hpp>
-#include <offsets.hpp>
-#include <server.hpp>
+#include "console.hpp"
+#include "offsets.hpp"
+#include "server.hpp"
 
 #include <cstdio>
 #include <unordered_set>

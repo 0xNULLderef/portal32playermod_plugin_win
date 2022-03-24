@@ -1,6 +1,7 @@
-#pragma once
+#ifndef INTERFACE_HPP
+#define INTERFACE_HPP
 
-#include <memory.hpp>
+#include "memory.hpp"
 
 class Interface {
 public:
@@ -56,3 +57,5 @@ public:
 	static void Delete(Interface* ptr);
 	static void* GetPtr(const char* filename, const char* interfaceSymbol);
 };
+
+#endif // INTERFACE_HPP

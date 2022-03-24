@@ -1,8 +1,9 @@
-#pragma once
+#ifndef VSCRIPT_HPP
+#define VSCRIPT_HPP
 
-#include <sdk.hpp>
-#include <interface.hpp>
-#include <utils.hpp>
+#include "sdk.hpp"
+#include "interface.hpp"
+#include "utils.hpp"
 
 class VScript {
 public:
@@ -26,3 +27,5 @@ public:
 };
 
 extern VScript* vscript;
+
+#endif // VSCRIPT_HPP

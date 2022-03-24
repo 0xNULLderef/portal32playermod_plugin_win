@@ -1,6 +1,7 @@
-#pragma once
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
-#include <sdk.hpp>
+#include "sdk.hpp"
 
 // Platform specific - declare the __cdecl macro (different for windows) and the macro to complete the shared object names
 #define __cdecl __attribute__((__cdecl__))
@@ -46,3 +47,5 @@
 		delete ptr; \
 		ptr = nullptr; \
 	}
+
+#endif // UTILS_HPP

@@ -1,8 +1,9 @@
-#pragma once
+#ifndef TIER1_HPP
+#define TIER1_HPP
 
-#include <interface.hpp>
-#include <sdk.hpp>
-#include <utils.hpp>
+#include "interface.hpp"
+#include "sdk.hpp"
+#include "utils.hpp"
 
 #define TIER1 "vstdlib"
 
@@ -36,3 +37,5 @@ public:
 };
 
 extern Tier1* tier1;
+
+#endif // TIER1_HPP

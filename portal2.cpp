@@ -1,6 +1,6 @@
-#include <portal2.hpp>
+#include "portal2.hpp"
 
-#include <offsets.hpp>
+#include "offsets.hpp"
 
 // Portal2::Portal2() {}
 
@@ -9,11 +9,9 @@ Portal2::Portal2() {
 
 	// engine.dll
 	Dtor = 9;
-	InternalSetValue = 12;
-	InternalSetFloatValue = 13;
-	InternalSetIntValue = 14;
 	Create = 27;
 	AutoCompletionFunc = 66;
+	LevelInit = 3;
 
 	// libvstdlib.dll
 	RegisterConCommand = 9;
@@ -25,7 +23,7 @@ Portal2::Portal2() {
 
 	// server.dll
 	Think = 31;
-	UTIL_PlayerByIndex = 39; // from CServerGameDLL::Think
+	UTIL_PlayerByIndex = 39; // CServerGameDLL::Think
 	m_szNetname = 3877;
 
 	// vscript.dll

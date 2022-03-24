@@ -1,9 +1,10 @@
-#pragma once
+#ifndef CLIENT_HPP
+#define CLIENT_HPP
 
-#include <sdk.hpp>
+#include "sdk.hpp"
 
-#include <utils.hpp>
-#include <interface.hpp>
+#include "utils.hpp"
+#include "interface.hpp"
 
 class Client {
 private:
@@ -26,3 +27,5 @@ public:
 };
 
 extern Client* client;
+
+#endif // CLIENT_HPP

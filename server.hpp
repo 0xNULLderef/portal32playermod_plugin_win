@@ -1,8 +1,9 @@
-#pragma once
+#ifndef SERVER_HPP
+#define SERVER_HPP
 
-#include <interface.hpp>
-#include <utils.hpp>
-#include <sdk.hpp>
+#include "interface.hpp"
+#include "utils.hpp"
+#include "sdk.hpp"
 
 class Server {
 public:
@@ -22,3 +23,5 @@ public:
 };
 
 extern Server* server;
+
+#endif // SERVER_HPP

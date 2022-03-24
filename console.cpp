@@ -1,6 +1,6 @@
-#include <console.hpp>
+#include "console.hpp"
 
-#include <memory.hpp>
+#include "memory.hpp"
 
 bool Console::Init() {
 	auto tier0 = Memory::GetModuleHandleByName(this->Name());

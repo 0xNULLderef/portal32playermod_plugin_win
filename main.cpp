@@ -1,16 +1,16 @@
-#include <main.hpp>
+#include "main.hpp"
 
-#include <sdk.hpp>
-#include <interface.hpp>
-#include <portal2.hpp>
+#include "sdk.hpp"
+#include "interface.hpp"
+#include "portal2.hpp"
 
 // -- module includes --
-#include <console.hpp>
-#include <command.hpp>
-#include <tier1.hpp>
-#include <server.hpp>
-#include <vscript.hpp>
-#include <client.hpp>
+#include "console.hpp"
+#include "command.hpp"
+#include "tier1.hpp"
+#include "server.hpp"
+#include "vscript.hpp"
+#include "client.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -21,21 +21,6 @@ EXPOSE_SINGLE_INTERFACE_GLOBALVAR(Plugin, IServerPluginCallbacks, INTERFACEVERSI
 Plugin::Plugin() {
 	Portal2* portal2 = new Portal2();
 	(void)portal2; // Janky ass hack so i don't need to set -Wno-unused-variable
-}
-
-CON_COMMAND(get_username, "get_username (index) - Gets player username by index (starting at 0)\n") {
-	console->Print("name: %s\n", server->GetPlayerName(atoi(args[1])));
-}
-
-CON_COMMAND(vscript_run, "run vscript with run\n") {
-	char* pszScript = (char*)args.m_pArgSBuffer;
-	pszScript += 11;
-	while(*pszScript == ' ') pszScript++;
-	vscript->Run(vscript->g_pScriptVM, pszScript, true);
-}
-
-CON_COMMAND(before_the_burn, "whatever\n") {
-	console->Print("%x\n", vscript->g_pScriptVM);
 }
 
 CON_COMMAND(crash_and_burn, "self explanatory...\n") {
@@ -79,13 +64,11 @@ const char* Plugin::GetPluginDescription() {
 	return "P2 32 player mod plugin (indev)";
 }
 
-void Plugin::LevelInit(char const* pMapName) {
-	vscript->hasToResetVM = true;
-}
 
 // Unused callbacks
 void Plugin::Pause() {}
 void Plugin::UnPause() {}
+void Plugin::LevelInit(char const* pMapName) {}
 void Plugin::ServerActivate(void* pEdictList, int edictCount, int clientMax) {}
 void Plugin::GameFrame(bool simulating) {}
 void Plugin::LevelShutdown() {}

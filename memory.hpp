@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MEMORY_HPP
+#define MEMORY_HPP
 
 #include <windows.h>
 #include <memoryapi.h>
@@ -69,3 +70,5 @@ namespace Memory {
 		VirtualProtect((void*)startPage, pageLen, PAGE_EXECUTE_READWRITE, &placeholder);
 	}
 };
+
+#endif // MEMORY_HPP

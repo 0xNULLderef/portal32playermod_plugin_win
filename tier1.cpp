@@ -1,6 +1,6 @@
-#include <tier1.hpp>
+#include "tier1.hpp"
 
-#include <offsets.hpp>
+#include "offsets.hpp"
 
 bool Tier1::Init() {
 	this->g_pCVar = Interface::Create(this->Name(), "VEngineCvar007", false);

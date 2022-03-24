@@ -1,6 +1,7 @@
-#pragma once
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
-#include <sdk.hpp>
+#include "sdk.hpp"
 
 // Main plugin class
 class Plugin : public IServerPluginCallbacks {
@@ -32,3 +33,5 @@ public:
 };
 
 extern Plugin plugin;
+
+#endif // MAIN_HPP

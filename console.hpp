@@ -1,7 +1,8 @@
-#pragma once
+#ifndef CONSOLE_HPP
+#define CONSOLE_HPP
 
 #include <functional>
-#include <utils.hpp>
+#include "utils.hpp"
 
 #define TIER0 "tier0"
 #define CONCOLORMSG_SYMBOL "?ConColorMsg@@YAXABVColor@@PBDZZ"
@@ -61,3 +62,5 @@ private:
 };
 
 extern Console* console;
+
+#endif // CONSOLE_HPP

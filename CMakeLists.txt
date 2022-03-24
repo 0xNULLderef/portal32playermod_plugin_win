@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(portal32playermod_plugin VERSION 0.1.0)
 
-set(TARGET_DIR K:\\SteamSSD\\steamapps\\common\\Portal\ 2\\portal2)
+set(TARGET_DIR "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Portal 2\\portal2")
 
 FILE(GLOB cppSrc *.cpp)
 add_library(32pmod SHARED ${cppSrc})

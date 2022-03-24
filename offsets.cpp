@@ -1,4 +1,4 @@
-#include <offsets.hpp>
+#include "offsets.hpp"
 
 namespace Offsets {
 	int RegisterConCommand;
@@ -22,4 +22,5 @@ namespace Offsets {
 	int FindElement;
 	int ChatPrintf;
 	int Run;
+	int LevelInit;
 };

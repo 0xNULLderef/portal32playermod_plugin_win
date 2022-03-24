@@ -1,7 +1,7 @@
-#include <server.hpp>
+#include "server.hpp"
 
-#include <offsets.hpp>
-#include <command.hpp>
+#include "offsets.hpp"
+#include "command.hpp"
 
 Server::Server() {}
 

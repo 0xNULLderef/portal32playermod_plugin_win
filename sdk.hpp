@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SDK_HPP
+#define SDK_HPP
 
 #include <cstring>
 #include <cstdint>
@@ -960,3 +961,5 @@ public:
 	const uint32_t* m_pBufferEnd;
 	const uint32_t* m_pData;
 };
+
+#endif // SDK_HPP

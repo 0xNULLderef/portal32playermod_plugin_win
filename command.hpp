@@ -1,6 +1,7 @@
-#pragma once
+#ifndef COMMAND_HPP
+#define COMMAND_HPP
 
-#include <sdk.hpp>
+#include "sdk.hpp"
 #include <vector>
 
 class Command {
@@ -36,3 +37,5 @@ public:
 	void name##_callback(const CCommand& args); \
 	Command name = Command(#name, name##_callback, description); \
 	void name##_callback(const CCommand& args)
+
+#endif // COMMAND_HPP
