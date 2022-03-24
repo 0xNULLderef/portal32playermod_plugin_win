@@ -31,7 +31,7 @@ Portal2::Portal2() {
 	Run = 10; // IScriptVM
 
 	// client.dll
-	MsgFunc_SayText2 = 26;
+	MsgFunc_SayText2 = 28;
 	GetHud = 125;
 	FindElement = 135;
 	ChatPrintf = 22;

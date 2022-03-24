@@ -7,6 +7,7 @@
 #include "vscript.hpp"
 
 #include <string>
+#include <memory>
 
 REDECL(Client::MsgFunc_SayText2);
 
@@ -15,21 +16,17 @@ DETOUR(Client::MsgFunc_SayText2, bf_read &msg) {
 
 	int id = (int)msg.ReadUnsigned(8);
 
-	char* message = (char*)alloca(256);
-	char* temp = message;
+	while(msg.ReadUnsigned(8));
+	while(msg.ReadUnsigned(8));
+
+	auto buf = std::make_unique<char[]>(256);
+	char* temp = buf.get();
 	while (char c = (char)(uint8_t)msg.ReadUnsigned(8)) {
 		*temp = (c != '\n') ? c : 0;
 		temp++;
 	}
 
-	char* name = (char*)server->GetPlayerName(id);
-	while(*name) {
-		name++;
-		message++;
-	}
-	message += 2;
-	
-	vscript->DoChatCallbacks(id, message);
+	vscript->DoChatCallbacks(id, buf.get());
 
 	msg = pre;
 
