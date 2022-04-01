@@ -3,9 +3,11 @@
 #include "offsets.hpp"
 #include "vscript.hpp"
 
+#include "console.hpp"
+
 REDECL(Engine::LevelInit);
 
-DETOUR_T(void, Engine::LevelInit, const char* pMapName, const char* pMapEntities, const char* pOldLevel, const char* pLandmarkName, bool loadGame, bool background) {
+DETOUR_T(void, Engine::LevelInit, char* pMapName, char* pMapEntities, char* pOldLevel, char* pLandmarkName, bool loadGame, bool background) {
 	vscript->hasToResetVM = true;
 	Engine::LevelInit(thisptr, pMapName, pMapEntities, pOldLevel, pLandmarkName, loadGame, background);
 }

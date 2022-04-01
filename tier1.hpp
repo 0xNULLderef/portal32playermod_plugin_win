@@ -24,8 +24,8 @@ public:
 	void* ConVar_VTable2 = nullptr;
 	_AutoCompletionFunc AutoCompletionFunc = nullptr;
 
-	using _Dtor = int(__rescall*)(ConVar* thisptr, char a2);
-	using _Create = int(__rescall*)(ConVar* thisptr, const char* pName, const char* pDefaultValue, int flags, const char* pHelpString, bool bMin, float fMin, bool bMax, float fMax, FnChangeCallback_t callback);
+	using _Dtor = int(__thiscall*)(ConVar* thisptr, char a2);
+	using _Create = int(__thiscall*)(ConVar* thisptr, const char* pName, const char* pDefaultValue, int flags, const char* pHelpString, bool bMin, float fMin, bool bMax, float fMax, FnChangeCallback_t callback);
 
 	_Dtor Dtor = nullptr;
 	_Create Create = nullptr;

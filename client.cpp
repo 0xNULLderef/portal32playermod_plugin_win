@@ -41,7 +41,7 @@ bool Client::Init() {
 		auto leaderboard = Command("+leaderboard");
 		if(!!leaderboard) {
 			using _GetHud = void* (__cdecl*)(int unk);
-			using _FindElement = void* (__rescall*)(void* thisptr, const char* pName);
+			using _FindElement = void* (__thiscall*)(void* thisptr, const char* pName);
 			
 			auto cc_leaderboard_enable = (uintptr_t)leaderboard.ThisPtr()->m_pCommandCallback;
 			auto GetHud = Memory::Read<_GetHud>(cc_leaderboard_enable + Offsets::GetHud);

@@ -15,7 +15,7 @@ public:
 	const char* Name() { return MODULE("engine"); }
 
 public:
-	DECL_DETOUR_T(void, LevelInit, const char* pMapName, const char* pMapEntities, const char* pOldLevel, const char* pLandmarkName, bool loadGame, bool background);
+	DECL_DETOUR_T(void, LevelInit, char* pMapName, char* pMapEntities, char* pOldLevel, char* pLandmarkName, bool loadGame, bool background);
 };
 
 extern Engine* engine;

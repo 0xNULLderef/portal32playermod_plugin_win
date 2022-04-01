@@ -5,9 +5,6 @@
 #include <cstdint>
 #include <cmath>
 
-#define __rescalll __thiscall
-#define __rescall __thiscall
-
 // --- Generic ---
 
 struct Color {
@@ -823,15 +820,15 @@ typedef void (*FnChangeCallback_t)(void* var, const char* pOldValue, float flOld
 
 using _CommandCallback = void (*)(const CCommand& args);
 using _CommandCompletionCallback = int (*)(const char* partial, char commands[COMMAND_COMPLETION_MAXITEMS][COMMAND_COMPLETION_ITEM_LENGTH]);
-using _InternalSetValue = void(__rescalll*)(void* thisptr, const char* value);
-using _InternalSetFloatValue = void(__rescalll*)(void* thisptr, float value);
-using _InternalSetIntValue = void(__rescalll*)(void* thisptr, int value);
-using _RegisterConCommand = void(__rescalll*)(void* thisptr, ConCommandBase* pCommandBase);
-using _UnregisterConCommand = void(__rescalll*)(void* thisptr, ConCommandBase* pCommandBase);
-using _FindCommandBase = void*(__rescalll*)(void* thisptr, const char* name);
-using _InstallGlobalChangeCallback = void(__rescalll*)(void* thisptr, FnChangeCallback_t callback);
-using _RemoveGlobalChangeCallback = void(__rescalll*)(void* thisptr, FnChangeCallback_t callback);
-using _AutoCompletionFunc = int(__rescalll*)(void* thisptr, char const* partial, char commands[COMMAND_COMPLETION_MAXITEMS][COMMAND_COMPLETION_ITEM_LENGTH]);
+using _InternalSetValue = void(__thiscall*)(void* thisptr, const char* value);
+using _InternalSetFloatValue = void(__thiscall*)(void* thisptr, float value);
+using _InternalSetIntValue = void(__thiscall*)(void* thisptr, int value);
+using _RegisterConCommand = void(__thiscall*)(void* thisptr, ConCommandBase* pCommandBase);
+using _UnregisterConCommand = void(__thiscall*)(void* thisptr, ConCommandBase* pCommandBase);
+using _FindCommandBase = void*(__thiscall*)(void* thisptr, const char* name);
+using _InstallGlobalChangeCallback = void(__thiscall*)(void* thisptr, FnChangeCallback_t callback);
+using _RemoveGlobalChangeCallback = void(__thiscall*)(void* thisptr, FnChangeCallback_t callback);
+using _AutoCompletionFunc = int(__thiscall*)(void* thisptr, char const* partial, char commands[COMMAND_COMPLETION_MAXITEMS][COMMAND_COMPLETION_ITEM_LENGTH]);
 
 struct ConCommandBase {
 	void* ConCommandBase_VTable;

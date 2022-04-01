@@ -6,11 +6,12 @@
 
 // -- module includes --
 #include "console.hpp"
-#include "command.hpp"
 #include "tier1.hpp"
 #include "server.hpp"
+#include "engine.hpp"
 #include "vscript.hpp"
 #include "client.hpp"
+#include "command.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -27,6 +28,10 @@ CON_COMMAND(crash_and_burn, "self explanatory...\n") {
 	abort();
 }
 
+CON_COMMAND(test_vscr, "asdfasdfa\n") {
+	vscript->Run(vscript->g_pScriptVM, "printl(\"hello world!\")", true);
+}
+
 bool Plugin::Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory) {
 	console = new Console();
 	if(!console->Init()) return false;
@@ -38,6 +43,9 @@ bool Plugin::Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServ
 
 	server = new Server();
 	if(!server->Init()) return false;
+
+	engine = new Engine();
+	if(!engine->Init()) return false;
 
 	vscript = new VScript();
 	if(!vscript->Init()) return false;
@@ -55,6 +63,7 @@ void Plugin::Unload() {
 	console->Shutdown();
 	client->Shutdown();
 	vscript->Shutdown();
+	engine->Shutdown();
 	server->Shutdown();
 	Command::UnregisterAll();
 	tier1->Shutdown(); // Do this one last so that it doesn't try to unregister without tier1 loaded...
