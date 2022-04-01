@@ -2,7 +2,7 @@
 
 #include "utils.hpp"
 #include "tier1.hpp"
-#include <cstdio>
+#include <stdio.h>
 
 std::vector<Command*>& Command::GetList() {
 	static std::vector<Command*> list;

@@ -2,7 +2,7 @@
 #define SDK_HPP
 
 #include <cstring>
-#include <cstdint>
+#include <stdint.h>
 #include <cmath>
 
 // --- Generic ---

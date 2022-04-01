@@ -1,8 +1,7 @@
 #include "memory.hpp"
 
 #include <psapi.h>
-
-#include <cstdio>
+#include <stdio.h>
 
 #define INRANGE(x, a, b) (x >= a && x <= b)
 #define getBits(x) (INRANGE((x & (~0x20)), 'A', 'F') ? ((x & (~0x20)) - 'A' + 0xA) : (INRANGE(x, '0', '9') ? x - '0' : 0))
@@ -44,7 +43,7 @@ bool Memory::TryGetModule(const char* moduleName, Memory::ModuleInfo* info) {
 	}
 
 	for(Memory::ModuleInfo& item : Memory::moduleList) {
-		if(!std::strcmp(item.name, moduleName)) {
+		if(!strcmp(item.name, moduleName)) {
 			if(info) {
 				*info = item;
 			}

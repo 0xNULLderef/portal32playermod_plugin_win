@@ -4,7 +4,7 @@
 #include "offsets.hpp"
 #include "server.hpp"
 
-#include <cstdio>
+#include <stdio.h>
 #include <unordered_set>
 #include <string>
 
