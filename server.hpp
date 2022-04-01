@@ -9,7 +9,7 @@ class Server {
 public:
 	Interface* g_ServerGameDLL = nullptr;
 
-	using _UTIL_PlayerByIndex = void*(__cdecl*)(int index);
+	using _UTIL_PlayerByIndex = void*(*)(int index);
 	_UTIL_PlayerByIndex UTIL_PlayerByIndex = nullptr;
 
 public:

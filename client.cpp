@@ -40,7 +40,7 @@ bool Client::Init() {
 	if(this->g_ClientDLL) {
 		auto leaderboard = Command("+leaderboard");
 		if(!!leaderboard) {
-			using _GetHud = void* (__cdecl*)(int unk);
+			using _GetHud = void* (*)(int unk);
 			using _FindElement = void* (__thiscall*)(void* thisptr, const char* pName);
 			
 			auto cc_leaderboard_enable = (uintptr_t)leaderboard.ThisPtr()->m_pCommandCallback;

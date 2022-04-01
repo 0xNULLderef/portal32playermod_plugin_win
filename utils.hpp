@@ -3,8 +3,6 @@
 
 #include "sdk.hpp"
 
-#define __cdecl__ __attribute__((__cdecl__))
-
 #define MODULE(name) name MODULE_EXTENSION
 #define MODULE_EXTENSION ".dll"
 

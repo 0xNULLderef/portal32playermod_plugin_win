@@ -16,16 +16,16 @@
 
 class Console {
 public:
-	using _Msg = void(__cdecl*)(const char* pMsgFormat, ...);
-	using _Warning = void(__cdecl*)(const char* pMsgFormat, ...);
-	using _ColorMsg = void(__cdecl*)(const Color& clr, const char* pMsgFormat, ...);
-	using _DevMsg = void(__cdecl*)(const char* pMsgFormat, ...);
-	using _DevWarning = void(__cdecl*)(const char* pMsgFormat, ...);
-	using _LoggingSystem_RegisterLoggingListener = void (__cdecl*)(ILoggingListener* listener);
-	using _LoggingSystem_PushLoggingState = void (__cdecl*)(bool threadLocal, bool clearState);
-	using _LoggingSystem_PopLoggingState = void (__cdecl*)(bool threadLocal);
-	using _LoggingSystem_HasTag = bool (__cdecl*)(int channelID, const char* tag);
-	using _LoggingSystem_SetChannelSpewLevelByTag = void (__cdecl*)(const char* tag, LoggingSeverity severity);
+	using _Msg = void(*)(const char* pMsgFormat, ...);
+	using _Warning = void(*)(const char* pMsgFormat, ...);
+	using _ColorMsg = void(*)(const Color& clr, const char* pMsgFormat, ...);
+	using _DevMsg = void(*)(const char* pMsgFormat, ...);
+	using _DevWarning = void(*)(const char* pMsgFormat, ...);
+	using _LoggingSystem_RegisterLoggingListener = void (*)(ILoggingListener* listener);
+	using _LoggingSystem_PushLoggingState = void (*)(bool threadLocal, bool clearState);
+	using _LoggingSystem_PopLoggingState = void (*)(bool threadLocal);
+	using _LoggingSystem_HasTag = bool (*)(int channelID, const char* tag);
+	using _LoggingSystem_SetChannelSpewLevelByTag = void (*)(const char* tag, LoggingSeverity severity);
 
 	_Msg Msg = nullptr;
 	_ColorMsg ColorMsg = nullptr;
