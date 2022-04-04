@@ -5,7 +5,6 @@ This specific version of the plugin is meant for windows. Therefore (since i'm a
 This plugin is specifically meant as an addition to [@kyleraykbs](https://github.com/kyleraykbs) [32 player mod for Portal 2](https://github.com/kyleraykbs/Portal2-32PlayerMod). It currently has very limited functionality but I have plans to expand soon.
 
 Current features:
-- concommand: get_username, returns username of player at index (1-32 i think?)  
 - vscript function `GetPlayerName`, same as above, just a binding for vscript  
 - vscript function `AddChatCallback`, provided with a string of a callback function x, it will call it simularly to `x(userid, "message text")`  
 
